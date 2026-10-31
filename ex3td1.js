@@ -24,7 +24,39 @@ const names=personne.map(({nom})=>nom);
 console.log(names);
 const mon_age=personne.map(({nom,age})=>({nom,age}));
 console.log(nom,mon_age);
+// on fait l'ajout d'un nouveau personne dans le tableau personne
 const nvpersonne={nom:"zina", ville:"sfax", age:22}
 const personne2=[...personne,nvpersonne];
 console.log(personne2);
+
+const voyage = {
+    destination: "Bali",
+    prix: 1800,
+    duree: 10,
+    transport: "Avion",
+    hotel: "5 étoiles"
+};
+// 1. Extraire destination et prix
+const { destination, prix } = voyage;
+console.log(destination); // Bali
+console.log(prix);        // 1800
+
+// 2. Extraire destination dans une variable appelée ville
+const { destination: ville } = voyage;
+console.log(ville); // Bali
+
+// 3. Extraire prix et duree avec des valeurs par défaut
+const { prix: prixVoyage = 2000, duree: dureeVoyage = 7 } = voyage;
+console.log(prixVoyage);  // 1800
+console.log(dureeVoyage); // 10
+
+// 4. Fonction avec destructuring directement dans les paramètres
+function afficherVoyage({ destination, prix, duree, transport, hotel }) {
+    console.log("Destination :", destination);
+    console.log("Prix :", prix);
+    console.log("Durée :", duree);
+    console.log("Transport :", transport);
+    console.log("Hôtel :", hotel);
+}
+afficherVoyage(voyage);
 
